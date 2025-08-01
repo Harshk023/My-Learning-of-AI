@@ -21,6 +21,40 @@ Focus: *Searching and Sorting Algorithms* with day-wise practice.
 - [ ] Count occurrences of an element  
 - [ ] Find index of first occurrence
 
+******CODE******
+"""
+🔹 Linear Search Algorithm
+-----------------------------------
+✅ Time Complexity: O(n) - we may have to check all elements in the worst case
+✅ Space Complexity: O(1) - no extra space is required
+
+👉 Approach:
+   1. Traverse the list element by element.
+   2. Compare each element with the target.
+   3. If found, return the index.
+   4. If not found, return -1.
+"""
+
+# Function to perform Linear Search
+def linear_search(arr, target):
+    for index in range(len(arr)):
+        # Check if current element matches the target
+        if arr[index] == target:
+            return index  # Return the index where target is found
+    return -1  # Target not found
+
+# Example usage
+if __name__ == "__main__":
+    arr = [10, 25, 30, 45, 50]  # Sample list
+    target = int(input("Enter the number to search: "))
+    
+    result = linear_search(arr, target)
+    
+    if result != -1:
+        print(f"✅ Element found at index {result}")
+    else:
+        print("❌ Element not found in the list.")
+
 ---
 
 ### *Day 2 – Binary Search*
@@ -33,6 +67,42 @@ Focus: *Searching and Sorting Algorithms* with day-wise practice.
 - [ ] Find first and last occurrence of an element  
 - [ ] Count of a number in sorted array  
 - [ ] Search in rotated sorted array (optional)
+
+******CODE******
+"""
+🔹 Linear Search Algorithm
+-----------------------------------
+✅ Time Complexity: O(n) - we may have to check all elements in the worst case
+✅ Space Complexity: O(1) - no extra space is required
+
+👉 Approach:
+   1. Traverse the list element by element.
+   2. Compare each element with the target.
+   3. If found, return the index.
+   4. If not found, return -1.
+"""
+
+# Function to perform Linear Search
+def linear_search(arr, target):
+    for index in range(len(arr)):
+        # Check if current element matches the target
+        if arr[index] == target:
+            return index  # Return the index where target is found
+    return -1  # Target not found
+
+# Example usage
+if __name__ == "__main__":
+    arr = [10, 25, 30, 45, 50]  # Sample list
+    target = int(input("Enter the number to search: "))
+    
+    result = linear_search(arr, target)
+    
+    if result != -1:
+        print(f"✅ Element found at index {result}")
+    else:
+        print("❌ Element not found in the list.")
+
+
 
 ---
 
