@@ -70,38 +70,56 @@ if __name__ == "__main__":
 
 ******CODE******
 """
-🔹 Linear Search Algorithm
+🔹 Binary Search Algorithm
 -----------------------------------
-✅ Time Complexity: O(n) - we may have to check all elements in the worst case
+✅ Time Complexity: O(log n) - search space reduces by half in each step
 ✅ Space Complexity: O(1) - no extra space is required
 
+👉 Prerequisite:
+   - The list must be sorted in ascending order.
+
 👉 Approach:
-   1. Traverse the list element by element.
-   2. Compare each element with the target.
-   3. If found, return the index.
-   4. If not found, return -1.
+   1. Define two pointers: low = 0, high = len(arr) - 1
+   2. Find the middle element.
+   3. If middle == target → return index.
+   4. If target < middle → search left half.
+   5. Else → search right half.
+   6. Repeat until low > high.
 """
 
-# Function to perform Linear Search
-def linear_search(arr, target):
-    for index in range(len(arr)):
-        # Check if current element matches the target
-        if arr[index] == target:
-            return index  # Return the index where target is found
+# Function to perform Binary Search
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    
+    while low <= high:
+        mid = (low + high) // 2  # Calculate middle index
+        
+        # Check if the target is at mid
+        if arr[mid] == target:
+            return mid
+        
+        # If target is smaller, ignore right half
+        elif target < arr[mid]:
+            high = mid - 1
+        
+        # If target is larger, ignore left half
+        else:
+            low = mid + 1
+    
     return -1  # Target not found
 
 # Example usage
 if __name__ == "__main__":
-    arr = [10, 25, 30, 45, 50]  # Sample list
+    arr = [10, 20, 30, 40, 50, 60, 70]  # Sorted list
     target = int(input("Enter the number to search: "))
     
-    result = linear_search(arr, target)
+    result = binary_search(arr, target)
     
     if result != -1:
         print(f"✅ Element found at index {result}")
     else:
         print("❌ Element not found in the list.")
-
 
 
 ---
